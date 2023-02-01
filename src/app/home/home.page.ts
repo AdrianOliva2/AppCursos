@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  curso: FormControl;
+  puntuacion: FormControl;
 
-  constructor() {}
-
+  constructor() {
+    this.curso = new FormControl("", Validators.required);
+    this.puntuacion = new FormControl(0, Validators.required);
+  }
 }
